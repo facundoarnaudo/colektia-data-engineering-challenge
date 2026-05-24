@@ -52,3 +52,6 @@ FROM (
 ) ranked
 WHERE seller_rank = 1
 ORDER BY total_sales DESC;
+
+---
+*Created by Facundo Arnaudo - Analytics Engineer & Data Specialist*
