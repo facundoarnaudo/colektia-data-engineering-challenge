@@ -21,7 +21,7 @@ During development, I encountered limitations mapping dynamic expressions into A
 
 ### 📺 Video Walkthrough
 In this brief video, I explain the architecture, the technical bottlenecks encountered, and how the JavaScript/Regex solution was implemented:
-**[-> Watch the Video Walkthrough (Spanish) Here]([PEGAR_LINK_DEL_VIDEO_AQUI])**
+**[-> Watch the Video Walkthrough (Spanish) Here](https://youtu.be/kg7SVxVOZCM)**
 
 ---
 
