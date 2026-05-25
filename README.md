@@ -3,7 +3,7 @@
 ## 📌 Project Overview
 This repository contains my solutions for a two-part technical assessment for a Data/Analytics Engineering role. The project demonstrates a "full-stack" approach to data problems: from ingesting and parsing unstructured data using AI-powered automation to extracting complex business metrics from a relational database using advanced SQL.
 
-> **🌐 Note on Language:** The documentation, video walkthrough, and underlying code are in Spanish, reflecting the original context of the assessment.
+> **🌐 Note on Language:** The documentation, video walkthrough, and underlying queries are in Spanish, reflecting the original context of the assessment.
 
 ---
 
@@ -21,7 +21,7 @@ During development, I encountered limitations mapping dynamic expressions into A
 
 ### 📺 Video Walkthrough
 In this brief video, I explain the architecture, the technical bottlenecks encountered, and how the JavaScript/Regex solution was implemented:
-**[-> Watch the Video Walkthrough (Spanish) Here](https://youtu.be/kg7SVxVOZCM)**
+**[-> Watch the Video Walkthrough (Spanish) Here](https://www.youtube.com/watch?v=kg7SVxVOZCM)**
 
 ---
 
@@ -36,22 +36,5 @@ This analysis goes beyond basic aggregations, utilizing:
 * **Subqueries & CTEs:** Used nested queries to pre-calculate total sales before applying ranking logic.
 * **Aggregations & Joins:** Combined multiple relational tables (`sales`, `seller`, `country`) to compute averages (`AVG`) and totals (`SUM`).
 
-### Example Query: Top Seller per Country
-```sql
-SELECT country, seller, total_sales
-FROM (
-    SELECT 
-        c.name AS country, 
-        se.name AS seller, 
-        SUM(s.amount) AS total_sales,
-        RANK() OVER (PARTITION BY c.name ORDER BY SUM(s.amount) DESC) AS seller_rank
-    FROM sales s
-    JOIN seller se ON s.seller_id = se.id
-    JOIN country c ON s.country_id = c.id
-    GROUP BY c.name, se.name
-) ranked
-WHERE seller_rank = 1
-ORDER BY total_sales DESC;
-```
 ---
 *Created by Facundo Arnaudo - Analytics Engineer & Data Specialist*
